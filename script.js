@@ -1,10 +1,13 @@
 'use scrict';
 
 document.getElementById("shopForBullets").addEventListener("click", bullets)
+document.getElementById("invisWall").addEventListener("mouseover", cheapBullets)
+window.addEventListener("keydown", keydown)
 let counter = 20
 let cash = 0
 let box = 0
 let toll = 0
+let a = -2
 
 
 
@@ -59,6 +62,34 @@ function bullets() {
   }
 }
 
+function noBullets(){
+cash+=box
+counter+=toll
+if (cash >= 1){
+document.getElementById("click_count").innerText = counter
+document.getElementById("money_count").innerText = cash
+box = 0
+toll = 0
+return counter
+}
+}
+
+function cheapBullets(){
+  cash+=box
+  counter+=toll
+  document.getElementById("click_count").innerText = counter
+  document.getElementById("money_count").innerText = cash
+  noBullets()
+  return counter
+}
+
+
+function keydown(event) {
+  console.log(event.key)
+  event.preventDefault()
+}
+
+
 
 // canvas setup
 function setup() {
@@ -74,7 +105,7 @@ function draw(){
 
  //makes circle0 move
   if (circle_x > CANVAS_WIDTH + CIRCLE_RADIUS || circle_x < CIRCLE_RADIUS) {
-    circle_inc = random(-7 , -1)
+    circle_inc = a //random(-7 , -1)
   }
 
  //circle0 shoting command
@@ -205,7 +236,7 @@ function draw(){
     circle_y3 = random((0 + CIRCLE_RADIUS) , (700 - CIRCLE_RADIUS))
     circle_cni3 = 0
     circle_inc3 = random(-2 , -1)
-    box+= random(1,2)
+    box++
     toll-=1
 
   } else if (circle_x3 < 0){
