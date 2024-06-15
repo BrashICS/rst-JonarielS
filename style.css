@@ -6,7 +6,7 @@ body {
 
 div.special {
   width: 120px;
-  height: 100px;
+  height: 250px;
   border: 1px solid #ffffae;
   margin: 10px;
   position: absolute;
@@ -15,12 +15,14 @@ div.special {
   padding: 30px;
   text-align: center;
   background-color: #ffffae;
+
 }
 
 div.cheap {
   width: 507px;
   height: 700px;
   left: -50px;
+  /* border-color red; ask at school later*/
   border: 1px solid #000000;
   position: absolute;
   background-color: #ffffae00;

@@ -1,8 +1,8 @@
 'use scrict';
 
 document.getElementById("shopForBullets").addEventListener("click", bullets)
-document.getElementById("invisWall").addEventListener("mouseover", cheapBullets)
-window.addEventListener("keydown", keydown)
+// document.getElementById("invisWall").addEventListener("mouseover", noBullets)
+// window.addEventListener("keydown", keydown)
 let counter = 20
 let cash = 0
 let box = 0
@@ -62,26 +62,13 @@ function bullets() {
   }
 }
 
-function noBullets(){
-cash+=box
-counter+=toll
-if (cash >= 1){
-document.getElementById("click_count").innerText = counter
-document.getElementById("money_count").innerText = cash
-box = 0
-toll = 0
-return counter
-}
-}
+// function noBullets(){
 
-function cheapBullets(){
-  cash+=box
-  counter+=toll
-  document.getElementById("click_count").innerText = counter
-  document.getElementById("money_count").innerText = cash
-  noBullets()
-  return counter
-}
+// return counter
+// }
+
+
+
 
 
 function keydown(event) {
@@ -103,13 +90,20 @@ function draw(){
 
   background(172, 255, 239)
 
+  cash+=box
+  document.getElementById("money_count").innerText = cash
+  counter+=toll
+  document.getElementById("click_count").innerText = counter
+  toll = 0
+  box = 0
+
  //makes circle0 move
   if (circle_x > CANVAS_WIDTH + CIRCLE_RADIUS || circle_x < CIRCLE_RADIUS) {
     circle_inc = a //random(-7 , -1)
   }
 
  //circle0 shoting command
-  if (mouseX >= circle_x - CIRCLE_RADIUS && mouseX <= circle_x + CIRCLE_RADIUS && mouseY >= circle_y - CIRCLE_RADIUS && mouseY <= circle_y + CIRCLE_RADIUS) {
+  if (mouseX >= circle_x - CIRCLE_RADIUS && mouseX <= circle_x + CIRCLE_RADIUS && mouseY >= circle_y - CIRCLE_RADIUS && mouseY <= circle_y + CIRCLE_RADIUS && counter > 0) {
     circle_cni = 10
     circle_inc = 0
   }
@@ -146,7 +140,7 @@ function draw(){
   }
 
  //circle1 shoting command
-  if (mouseX >= circle_x1 - CIRCLE_RADIUS && mouseX <= circle_x1 + CIRCLE_RADIUS && mouseY >= circle_y1 - CIRCLE_RADIUS && mouseY <= circle_y1 + CIRCLE_RADIUS) {
+  if (mouseX >= circle_x1 - CIRCLE_RADIUS && mouseX <= circle_x1 + CIRCLE_RADIUS && mouseY >= circle_y1 - CIRCLE_RADIUS && mouseY <= circle_y1 + CIRCLE_RADIUS && counter > 0) {
     circle_cni1 = 10
     circle_inc1 = 0
   }
@@ -185,7 +179,7 @@ function draw(){
   }
 
   //circle1 shoting command
-  if (mouseX >= circle_x2 - CIRCLE_RADIUS && mouseX <= circle_x2 + CIRCLE_RADIUS && mouseY >= circle_y2 - CIRCLE_RADIUS && mouseY <= circle_y2 + CIRCLE_RADIUS) {
+  if (mouseX >= circle_x2 - CIRCLE_RADIUS && mouseX <= circle_x2 + CIRCLE_RADIUS && mouseY >= circle_y2 - CIRCLE_RADIUS && mouseY <= circle_y2 + CIRCLE_RADIUS && counter > 0) {
     circle_cni2 = 10
     circle_inc2 = 0
   }
@@ -225,7 +219,7 @@ function draw(){
   }
 
  //circle3 shoting command
-  if (mouseX >= circle_x3 - CIRCLE_RADIUS && mouseX <= circle_x3 + CIRCLE_RADIUS && mouseY >= circle_y3 - CIRCLE_RADIUS && mouseY <= circle_y3 + CIRCLE_RADIUS) {
+  if (mouseX >= circle_x3 - CIRCLE_RADIUS && mouseX <= circle_x3 + CIRCLE_RADIUS && mouseY >= circle_y3 - CIRCLE_RADIUS && mouseY <= circle_y3 + CIRCLE_RADIUS && counter > 0) {
     circle_cni3 = 10
     circle_inc3 = 0
   }
@@ -264,7 +258,7 @@ function draw(){
   }
 
  //circle4 shoting command
-  if (mouseX >= circle_x4 - CIRCLE_RADIUS && mouseX <= circle_x4 + CIRCLE_RADIUS && mouseY >= circle_y4 - CIRCLE_RADIUS && mouseY <= circle_y4 + CIRCLE_RADIUS) {
+  if (mouseX >= circle_x4 - CIRCLE_RADIUS && mouseX <= circle_x4 + CIRCLE_RADIUS && mouseY >= circle_y4 - CIRCLE_RADIUS && mouseY <= circle_y4 + CIRCLE_RADIUS && counter > 0) {
     circle_cni4 = 10
     circle_inc4 = 0
   }
