@@ -8,6 +8,8 @@ document.getElementById("shopForTenBullets").addEventListener("click", tenbullet
 let counter = 20
 let cash = 0
 let a = -5
+let deathCount = 0
+let liveCount = 0
 
 
 
@@ -90,6 +92,24 @@ function draw(){
 
   background(255, 166, 89)
 
+  if (cash <= -500){
+    circle_inc = 0
+    circle_inc1 = 0
+    circle_inc2 = 0
+    circle_inc3 = 0
+    circle_inc4 = 0
+
+    circle_cni = 0
+    circle_cni1 = 0
+    circle_cni2 = 0
+    circle_cni3 = 0
+    circle_cni4 = 0
+
+  }
+
+
+  document.getElementById("dead_count").innerText = deathCount
+  document.getElementById("live_count").innerText = liveCount
   document.getElementById("money_count").innerText = cash
   document.getElementById("click_count").innerText = counter
 
@@ -114,6 +134,7 @@ function draw(){
     circle_inc = random(-2 , -1)
     cash+=115
     counter-=1
+    deathCount++
     //if the circle passes by
   } else if (circle_x < 0){
     circle_x = random((1000 + CIRCLE_RADIUS) , (1500))
@@ -121,6 +142,7 @@ function draw(){
     circle_cni = 0
     circle_inc = random(-2 , -1)
     cash-=5
+    liveCount++
   }
 
   circle_y += circle_cni
@@ -153,6 +175,7 @@ function draw(){
     circle_inc1 = random(-2 , -1)
     cash+=100
     counter-=1
+    deathCount++
 
   } else if (circle_x1 < 0){
     circle_x1 = random((450 + CIRCLE_RADIUS) , (700))
@@ -160,6 +183,7 @@ function draw(){
     circle_cni1 = 0
     circle_inc1 = random(-2 , -1)
     cash-=5
+    liveCount++
   }
 
 
@@ -195,6 +219,7 @@ function draw(){
     circle_inc2 = random(-2 , -1)
     cash+=100
     counter-=1
+    deathCount++
 
   } else if (circle_x2 < 0){
     circle_x2 = random((450 + CIRCLE_RADIUS) , (700))
@@ -202,6 +227,7 @@ function draw(){
     circle_cni2 = 0
     circle_inc2 = random(-2 , -1)
     cash-=5
+    liveCount++
   }
 
 
@@ -237,6 +263,7 @@ function draw(){
     circle_inc3 = random(-2 , -1)
     cash+=100
     counter-=1
+    deathCount++
 
   } else if (circle_x3 < 0){
     circle_x3 = random((450 + CIRCLE_RADIUS) , (700))
@@ -244,6 +271,7 @@ function draw(){
     circle_cni3 = 0
     circle_inc3 = random(-2 , -1)
     cash-=5
+    liveCount++
   }
 
   circle_y3 += circle_cni3
@@ -278,6 +306,7 @@ function draw(){
     circle_inc4 = random(-2 , -1)
     cash+=150
     counter-=1
+    deathCount++
 
   } else if (circle_x4 < 0){
     circle_x4 = random((450 + CIRCLE_RADIUS) , (700))
@@ -285,6 +314,7 @@ function draw(){
     circle_cni4 = 0
     circle_inc4 = random(-2 , -1)
     cash-=5
+    liveCount++
   }
 
   circle_y4 += circle_cni4

@@ -28,6 +28,8 @@ div.mutton1 {
   background-color: #e5aeff;
 }
 
+
+
 div.cutton1{
   left: 300px;
   position: absolute;
@@ -61,6 +63,11 @@ div.mutton3 {
   background-color: #ffe75d;
 }
 
+div.cutton3{
+  left: 300px;
+  position: absolute;
+}
+
 div.mutton4 {
   width: 120px;
   height: 50px;
@@ -72,12 +79,20 @@ div.mutton4 {
   background-color: #ff3c00;
 }
 
-div.cheap {
-  width: 507px;
-  height: 700px;
-  left: -50px;
-  /* border-color red; ask at school later*/
-  border: 1px solid #000000;
+div.cutton4{
+  left: 300px;
   position: absolute;
-  background-color: #ffffae00;
 }
+
+div.mutton5 {
+  width: 120px;
+  height: 80px;
+  margin: 10px;
+  position: absolute;
+  top: 420px;
+  left: 466px;
+  padding: 30px;
+  text-align: center;
+  background-color: #74c1ff;
+}
+
