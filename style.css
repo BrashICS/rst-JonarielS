@@ -15,7 +15,61 @@ div.special {
   padding: 30px;
   text-align: center;
   background-color: #ffffae;
+}
 
+div.mutton1 {
+  width: 120px;
+  height: 50px;
+  margin: 10px;
+  position: absolute;
+  top: 125px;
+  padding: 30px;
+  text-align: center;
+  background-color: #e5aeff;
+}
+
+div.cutton1{
+  left: 300px;
+  position: absolute;
+}
+
+
+div.mutton2 {
+  width: 120px;
+  height: 50px;
+  margin: 10px;
+  position: absolute;
+  top: 250px;
+  padding: 30px;
+  text-align: center;
+  background-color: #dbffb2;
+}
+
+div.cutton2{
+  left: 300px;
+  position: absolute;
+}
+
+div.mutton3 {
+  width: 120px;
+  height: 50px;
+  margin: 10px;
+  position: absolute;
+  top: 375px;
+  padding: 30px;
+  text-align: center;
+  background-color: #ffe75d;
+}
+
+div.mutton4 {
+  width: 120px;
+  height: 50px;
+  margin: 10px;
+  position: absolute;
+  top: 500px;
+  padding: 30px;
+  text-align: center;
+  background-color: #ff3c00;
 }
 
 div.cheap {

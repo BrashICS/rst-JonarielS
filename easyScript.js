@@ -1,12 +1,12 @@
 'use scrict';
 
-document.getElementById("shopForBullets").addEventListener("click", bullets)
+document.getElementById("shopForBullet").addEventListener("click", bullet)
+document.getElementById("shopForFiveBullets").addEventListener("click", fivebullet)
+document.getElementById("shopForTenBullets").addEventListener("click", tenbullet)
 // document.getElementById("invisWall").addEventListener("mouseover", noBullets)
 // window.addEventListener("keydown", keydown)
 let counter = 20
 let cash = 0
-let box = 0
-let toll = 0
 let a = -2
 
 
@@ -48,33 +48,33 @@ function random(min, max) {
 }
 
 
-function bullets() {
-  cash+=box
-  counter+=toll
-  if (cash >= 1){
+function bullet() {
+  if (cash >= 100){
   counter++
-  cash-=1
+  cash-=100
   document.getElementById("click_count").innerText = counter
   document.getElementById("money_count").innerText = cash
-  box = 0
-  toll = 0
-  return counter
   }
 }
 
-// function noBullets(){
-
-// return counter
-// }
-
-
-
-
-
-function keydown(event) {
-  console.log(event.key)
-  event.preventDefault()
+function fivebullet() {
+  if (cash >= 450){
+  counter+=5
+  cash-=450
+  document.getElementById("click_count").innerText = counter
+  document.getElementById("money_count").innerText = cash
+  }
 }
+
+function tenbullet() {
+  if (cash >= 780){
+  counter+=10
+  cash-=780
+  document.getElementById("click_count").innerText = counter
+  document.getElementById("money_count").innerText = cash
+  }
+}
+
 
 
 
@@ -90,12 +90,23 @@ function draw(){
 
   background(172, 255, 239)
 
-  cash+=box
   document.getElementById("money_count").innerText = cash
-  counter+=toll
   document.getElementById("click_count").innerText = counter
-  toll = 0
-  box = 0
+
+  if (mouseX < CANVAS_WIDTH && mouseX > 0 && mouseY < CANVAS_HEIGHT && mouseY > 0){
+    circle_inc = -2
+    circle_inc1 = -2
+    circle_inc2 = -2
+    circle_inc3 = -2
+    circle_inc4 = -2
+  } else {
+    circle_inc = -1
+    circle_inc1 = -1
+    circle_inc2 = -1
+    circle_inc3 = -1
+    circle_inc4 = -1
+  }
+
 
  //makes circle0 move
   if (circle_x > CANVAS_WIDTH + CIRCLE_RADIUS || circle_x < CIRCLE_RADIUS) {
@@ -113,14 +124,15 @@ function draw(){
     circle_y = random((0 + CIRCLE_RADIUS) , (700 - CIRCLE_RADIUS))
     circle_cni = 0
     circle_inc = random(-2 , -1)
-    box++
-    toll-=1
+    cash+=115
+    counter-=1
     //if the circle passes by
   } else if (circle_x < 0){
     circle_x = random((1000 + CIRCLE_RADIUS) , (1500))
     circle_y = random((0 + CIRCLE_RADIUS) , (700 - CIRCLE_RADIUS))
     circle_cni = 0
     circle_inc = random(-2 , -1)
+    cash-=5
   }
 
   circle_y += circle_cni
@@ -150,14 +162,15 @@ function draw(){
     circle_y1 = random((0 + CIRCLE_RADIUS) , (700 - CIRCLE_RADIUS))
     circle_cni1 = 0
     circle_inc1 = random(-2 , -1)
-    box++
-    toll-=1
+    cash+=100
+    counter-=1
 
   } else if (circle_x1 < 0){
     circle_x1 = random((450 + CIRCLE_RADIUS) , (700))
     circle_y1 = random((0 + CIRCLE_RADIUS) , (700 - CIRCLE_RADIUS))
     circle_cni1 = 0
     circle_inc1 = random(-2 , -1)
+    cash-=5
   }
 
 
@@ -190,14 +203,15 @@ function draw(){
     circle_y2 = random((0 + CIRCLE_RADIUS) , (700 - CIRCLE_RADIUS))
     circle_cni2 = 0
     circle_inc2 = random(-2 , -1)
-    box++
-    toll-=1
+    cash+=100
+    counter-=1
 
   } else if (circle_x2 < 0){
     circle_x2 = random((450 + CIRCLE_RADIUS) , (700))
     circle_y2 = random((0 + CIRCLE_RADIUS) , (700 - CIRCLE_RADIUS))
     circle_cni2 = 0
     circle_inc2 = random(-2 , -1)
+    cash-=5
   }
 
 
@@ -230,14 +244,15 @@ function draw(){
     circle_y3 = random((0 + CIRCLE_RADIUS) , (700 - CIRCLE_RADIUS))
     circle_cni3 = 0
     circle_inc3 = random(-2 , -1)
-    box++
-    toll-=1
+    cash+=100
+    counter-=1
 
   } else if (circle_x3 < 0){
     circle_x3 = random((450 + CIRCLE_RADIUS) , (700))
     circle_y3 = random((0 + CIRCLE_RADIUS) , (700 - CIRCLE_RADIUS))
     circle_cni3 = 0
     circle_inc3 = random(-2 , -1)
+    cash-=5
   }
 
   circle_y3 += circle_cni3
@@ -269,15 +284,15 @@ function draw(){
     circle_y4 = random((0 + CIRCLE_RADIUS) , (700 - CIRCLE_RADIUS))
     circle_cni4 = 0
     circle_inc4 = random(-2 , -1)
-    box+=1.50
-    toll-=1
+    cash+=150
+    counter-=1
 
   } else if (circle_x4 < 0){
     circle_x4 = random((450 + CIRCLE_RADIUS) , (700))
     circle_y4 = random((0 + CIRCLE_RADIUS) , (700 - CIRCLE_RADIUS))
     circle_cni4 = 0
     circle_inc4 = random(-2 , -1)
-
+    cash-=5
   }
 
   circle_y4 += circle_cni4
